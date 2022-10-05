@@ -45,11 +45,17 @@ By creating temporary files saves on the processing energy
 
 Notes on Context Managers
 Context managers allow for allocation of resources. The [with] statement means that temporary files are automatically closed.
+The open function
 ```
-Open returns a file object, which has methods and attributes for 
-getting information about and manipulating the opened file.
-The With function takes care of closing the file automatically.
+open("Words.txt", "a+")
 
+```
+Returns a file object, which has methods and attributes for getting information and manipulating the opened file.
+The ```With``` function takes care of closing the file automatically.
+
+Example code used in project 
+
+```
 with tempfile.TemporaryDirectory(dir='.') as tmpdirname:
     print(tmpdirname)
     with open("Words.txt", "a+") as file:
